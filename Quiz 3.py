@@ -47,7 +47,7 @@ def User_Category():
 
 
 def User_Difficulty():
-    # Prints Categories And Prompts User To Choose One Of Them
+    # Prints Difficulties And Prompts User To Choose One Of Them
     while True:
         user_difficulty = input(f"{bcolors.OKBLUE}Choose Difficulty{bcolors.ENDC}\n{bcolors.FAIL}1{bcolors.ENDC} : "
                                 f"{bcolors.OKGREEN}Easy{bcolors.ENDC}\n{bcolors.FAIL}2{bcolors.ENDC} : "

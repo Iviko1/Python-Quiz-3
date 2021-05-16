@@ -70,17 +70,14 @@ def Create_DB(ch_category):
     # Connects To Database And Creates The Chosen Category Table If It Doesn't Exist Yet
     connect = Connect_To_DB('Questions.db')
     cursor = connect.cursor()
-    try:
-        cursor.execute(f'''
-            CREATE TABLE {ch_category}
-            (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            question VARCHAR(1000),
-            answer VARCHAR(1000)
-            )
-        ''')
-    except:
-        pass
+    cursor.execute(f'''
+        CREATE TABLE IF NOT EXISTS {ch_category}
+        (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question VARCHAR(1000),
+        answer VARCHAR(1000)
+        )
+    ''')
     connect.close()
 
 
